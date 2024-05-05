@@ -1,24 +1,21 @@
-# README
+# Twitter Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Twitter clone built using Ruby on Rails, designed to mimic the core functionalities of a social media platform.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- User Authentication: Users can sign up, log in, and log out securely.
 
-* System dependencies
+- User Profiles: Users can view and edit their profiles, including profile pictures and bio.
 
-* Configuration
+- Posting Tweets: Users can create, edit, and delete tweets.
 
-* Database creation
+- Interactions: Users can like and comment on tweets.
 
-* Database initialization
+## Tech Stack
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Framework: Ruby on Rails
+- Database: PostgreSQL
+- Authentication: Devise for user authentication
+- Real-time Updates: Turbo
+- Styling: CSS with Tailwind for styling
