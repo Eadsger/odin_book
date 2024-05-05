@@ -12,6 +12,7 @@ class TweetsController < ApplicationController
 
     respond_to do |format|
       if @tweet.save
+        format.html { redirect_to root_path}
         format.turbo_stream
       else
         format.html do
@@ -31,6 +32,7 @@ class TweetsController < ApplicationController
   def destroy
     @tweet = current_user.tweets.find(params[:id])
     @tweet.destroy
+    redirect_to root_path
   end
 
   def retweet
@@ -40,6 +42,7 @@ class TweetsController < ApplicationController
 
     respond_to do |format|
       if @retweet.save
+        format.html { redirect_to root_path }
         format.turbo_stream
       else
         format.html { redirect_back fallback_location: @tweet, alert: "Could not retweet" }
