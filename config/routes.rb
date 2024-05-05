@@ -1,13 +1,14 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-    authenticate :user, lambda { |u| u.admin? } do
-      mount Sidekiq::Web => '/sidekiq'
-    end
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
 
   devise_for :users
-  root to: 'home#index'
+  resources :tweets, except: [:edit, :update]
+  root to: 'tweets#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
