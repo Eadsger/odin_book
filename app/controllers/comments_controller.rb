@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     @comment = @tweet.comments.new(comment_params.merge(user: current_user))
     respond_to do |format|
       if @comment.save
+        format.html { redirect_to tweet_path(@tweet) }
         format.turbo_stream
       else
         format.html { redirect_to tweet_path(@tweet), alert: "Reply could not be created" }
